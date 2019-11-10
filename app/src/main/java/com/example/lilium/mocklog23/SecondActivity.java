@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,12 @@ public class SecondActivity extends AppCompatActivity {
 RecyclerView rv;
 List<Member> names;
 
+TextView userEmail;
+Button userLogout, signup;
+
+FirebaseAuth mAuth;
+FirebaseUser firebaseUser;
+
 Adapter adapter;
 Button nxt1;
 
@@ -42,7 +50,18 @@ Button nxt1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+
+        ///////////////
+        userEmail = findViewById(R.id.textView3);
+        userLogout = findViewById(R.id.button2);
+
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+        userEmail.setText(firebaseUser.getEmail());
+        ///////////////
+
         nxt1 = (Button) findViewById(R.id.button2);
+        signup = (Button) findViewById(R.id.button3);
 
         rv = (RecyclerView) findViewById(R.id.recycler);
 
@@ -86,12 +105,30 @@ Button nxt1;
             }
         });
 
+
         nxt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, ThirdActivity.class));
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new  Intent(SecondActivity.this, MainActivity.class);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                //startActivity(new Intent(SecondActivity.this, ThirdActivity.class));
             }
         });
+
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new  Intent(SecondActivity.this, ThirdActivity.class);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
+
 
 
 
