@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "650558000840",
+    "firebase_url": "https://mocklog23.firebaseio.com",
+    "project_id": "mocklog23",
+    "storage_bucket": "mocklog23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650558000840:android:8c561c4200d0122c6d1ffd",
+        "android_client_info": {
+          "package_name": "com.example.lilium.mocklog23"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650558000840-hk9rcaqniolid9sncnn9rsli7i05thtb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lilium.mocklog23",
+            "certificate_hash": "71ab6ba8ce4042a9ed9f8fbf20cf5c3a28fe36d3"
+          }
+        },
+        {
+          "client_id": "650558000840-1l7ji8bdqmbldc49vtultfja3mgunflt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRl0aO6hT2JsPRiRmItX6VZd1wT-XDclg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650558000840-1l7ji8bdqmbldc49vtultfja3mgunflt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
